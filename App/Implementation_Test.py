@@ -12,7 +12,7 @@ Trained_MLP = joblib.load('K:\\Apps\\MachineLearning\\Resources\\Finalized_Model
 
 """ Loading the trained model I previously saved."""
 
-img = cv2.imread('C:\\Users\\edira\\Desktop\\test.jpg')
+img = cv2.imread('C:\\Users\\<USERNAME>\\Desktop\\test.jpg')
 
 """ 
     For privacy reasons some of the path has been removed, the <NAME> part can be

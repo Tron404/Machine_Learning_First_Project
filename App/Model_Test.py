@@ -17,7 +17,7 @@ start_time = time.time()
 
 MNIST = fetch_openml('mnist_784')
 X_train, X_test, Y_train, Y_test =\
-    train_test_split(MNIST.data, MNIST.target, test_size=0.25)
+    train_test_split(MNIST.data, MNIST.target, test_size=0.9)
 
 """ 
     This data that I am splitting is the same as the one before, but this time I am focusing more on testing

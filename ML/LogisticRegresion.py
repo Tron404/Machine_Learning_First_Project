@@ -20,7 +20,7 @@ MNIST = fetch_openml('mnist_784')
 
 """ Got the needed data, the famous MNIST data set, containing thousands of already preprocessed images."""
 
-X_train, X_test, Y_train, Y_test = train_test_split(MNIST.data, MNIST.target, test_size=0.25, random_state=0)
+X_train, X_test, Y_train, Y_test = train_test_split(MNIST.data, MNIST.target, test_size=0.25)
 
 """ 
     Split the data so I can train and test our Neural Network;
