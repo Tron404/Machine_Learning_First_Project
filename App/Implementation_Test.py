@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 import joblib
 import cv2
 
@@ -12,7 +11,7 @@ Trained_MLP = joblib.load('K:\\Apps\\MachineLearning\\Resources\\Finalized_Model
 
 """ Loading the trained model I previously saved."""
 
-img = cv2.imread('C:\\Users\\<USERNAME>\\Desktop\\test.jpg')
+img = cv2.imread('C:\\Users\\<NAME>\\Desktop\\test.jpg')
 
 """ 
     For privacy reasons some of the path has been removed, the <NAME> part can be
@@ -47,7 +46,7 @@ blur = cv2.GaussianBlur(gray, (5, 5), 0)
 ret, thresh = cv2.threshold(blur, 100, 255, cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
 
 """
-    The threshold at which pixels will be converted, in this case, to white and black, 
+    The threshold at which pixels will be converted, in this case, to black and white, 
     because of the THRESH_BINARY_INV flag, which also inverses the colours to 
     the ones mentioned above; the THRESH_OTSU flag is used to determine the the threshold 
     value by calculating a measure of spread for the pixel levels on each side of the threshold,
@@ -76,11 +75,6 @@ contours, hierarchy = cv2.findContours(morphology, cv2.RETR_EXTERNAL, cv2.CHAIN_
     We don't need the hierarchy of the contours found in the hierarchy variable.
 """
 
-cv2.imwrite('K:\\Apps\\MachineLearning\\Processed_Images\\gray.jpg', gray)
-cv2.imwrite('K:\\Apps\\MachineLearning\\Processed_Images\\blur.jpg', blur)
-cv2.imwrite('K:\\Apps\\MachineLearning\\Processed_Images\\thresh.jpg', thresh)
-cv2.imwrite('K:\\Apps\\MachineLearning\\Processed_Images\\closing.jpg', morphology)
-
 """
     Saving the images as I wanted to see the processing being done to understand 
     the whole process and the functions better.
@@ -107,7 +101,7 @@ for c in contours:
         putting text to understand what the model found.
     """
 
-plt.imshow(img, cmap="gray")
-plt.show()
+cv2.imshow("Implementation_Test", img)
+cv2.waitKey(0)
 
 """Showing the image with the predicted labels"""
