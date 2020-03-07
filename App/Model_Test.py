@@ -25,7 +25,6 @@ X_train, X_test, Y_train, Y_test =\
     having a big accuracy not to being properly trained, but to being able to recognise some of the models it may
     have encountered in the training process.
 """
-# TODO: Verify the claim made above
 
 Trained_MLP = joblib.load('K:\\Apps\\MachineLearning\\Resources\\Finalized_Model')
 
@@ -47,6 +46,8 @@ print(str(score_readable) + "%")
 """ Obtaining the accuracy score and printing it."""
 
 cm = metrics.confusion_matrix(Y_test, predictions)
+
+print(cm)
 
 """ 
     Creating a Confusion Matrix in the form of a Correlogram

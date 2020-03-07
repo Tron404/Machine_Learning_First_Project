@@ -1,6 +1,15 @@
 import numpy as np
 import cv2
+
+import time
 import joblib
+
+from datetime import timedelta
+
+from sklearn.datasets import fetch_openml
+from sklearn.model_selection import train_test_split
+from sklearn.neural_network import MLPClassifier
+
 
 """ 
     I have imported the necessary libraries to test the model live, on real time images
@@ -58,7 +67,7 @@ while True:
     ret, thresh = cv2.threshold(blur, 100, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
 
     """
-        The threshold at which pixels will be converted, in this case, to white and black, 
+        The threshold at which pixels will be converted, in this case, to black and white, 
         because of the THRESH_BINARY_INV flag, which also inverses the colours to 
         the ones mentioned above; the THRESH_OTSU flag is used to determine the the threshold 
         value by calculating a measure of spread for the pixel levels on each side of the threshold,
